@@ -1,0 +1,42 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    MakeFile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/26 15:40:16 by marvin            #+#    #+#              #
+#    Updated: 2022/10/26 15:40:16 by marvin           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = ft_tail
+
+SRCS = srcs/ft_tail.c srcs/display.c
+
+OBJS = ${SRCS:.c=.o}
+
+RM = rm -f
+
+CC = gcc
+
+includes = includes
+
+CFLAGS = -Wall -Wextra -Werror
+
+.c.o:
+			${CC} ${CFLAGS} -I ${includes} -c $< -o ${<:.c=.o}
+
+${NAME}:	${OBJS}
+
+all:		${NAME} 
+
+clean:
+			${RM} ${OBJS}
+
+fclean:	clean
+			${RM} ${NAME}
+
+re:		fclean all
+
+.PHONY: all clean fclean re
