@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 16:21:58 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/07 16:23:11 by vgiordan         ###   ########.fr       */
+/*   Created: 2022/10/25 12:42:37 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/25 12:42:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+    unsigned int    i;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    i = 0;
+    while (*s)
+    {
+        f(i, *s++);
+        i++;
+    }
+    
 }
-/*
-int	main(void)
-{
-	char	*unephrase;
-
-	unephrase = "Hello World";
-	ft_strlen(unephrase);
-	printf("%d", ft_strlen(unephrase));
-}*/

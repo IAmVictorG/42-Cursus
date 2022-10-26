@@ -39,6 +39,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (is_in_charset(s1[i++], set) == 0)
 			count++;
 	result = malloc((count + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
 	i = 0;
 	while (s1[i])
 	{
@@ -53,11 +55,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (result);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	*s = "Victeor zkw Gzeizoerdani";
 	char	*set = "ezwk";
 
 	printf("%s\n", ft_strtrim(s, set));
 	return (0);
-}
+}*/

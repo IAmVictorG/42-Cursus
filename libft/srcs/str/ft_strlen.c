@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 14:27:33 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/06 10:37:51 by vgiordan         ###   ########.fr       */
+/*   Created: 2022/09/07 16:21:58 by vgiordan          #+#    #+#             */
+/*   Updated: 2022/09/07 16:23:11 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_alpha(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (str[0] == '\0')
-	{
-		return (1);
-	}
 	while (str[i] != '\0')
 	{
-		if (!(str[i] >= 65 && str[i] <= 90))
-		{
-			if (!(str[i] >= 97 && str[i] <= 122))
-				return (0);
-		}
 		i++;
 	}
-	return (1);
+	return (i);
 }
-/*
-int	main(void)
+
+/*int	main(void)
 {
-	char msg[] = "dsadasdas dssbfhsdh ";
-	int result = ft_str_is_alpha(msg);
-	printf("%d", result);
+	char	*unephrase;
+
+	unephrase = "Hello World";
+	ft_strlen(unephrase);
+	strlen(unephrase);
+	printf("%d", ft_strlen(unephrase));
 }*/

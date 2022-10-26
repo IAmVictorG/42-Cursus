@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	int	i;
 	int	string_length;
@@ -34,8 +34,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (*dest);
 }
 
-/*
-int main()
+
+/*int main()
 {
 	char message1[] = "Hello Worlddwa";
 	char message2[] = "AAAAAAAAAAA";
@@ -48,7 +48,7 @@ int main()
 	printf("%c", '\n');
 	ft_strlcpy(message2, message1, n);
 	i = 0;
-
+	strlcpy(message2, message1,n);
 
 	printf("%u", ft_strlcpy(message2, message1, n));
 }*/

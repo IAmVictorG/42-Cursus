@@ -14,49 +14,39 @@
 #include <stdlib.h>
 #include <string.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlen(char const *str)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-	j = 0;
-	while (src[j] != '\0' && j < size && ((j + i) < size - 1))
-	{
-			dest[i + j] = src[j];
-			j++;
-	}
-	dest[i + j] = 'Z';
-	return ((unsigned int)(i + j));
+	return (i);
 }
 
-unsigned int	ft_strlcatbis(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	length;
+	size_t	s_dest;
+	size_t	s_src;
+	size_t	i;
 
-	length = 0;
 	i = 0;
-	while (dest[length] && length < size)
-		length++;
-	while (src[i] && size && length + i < size - 1)
+	s_dest = ft_strlen(dest);
+	s_src = ft_strlen(s_src);
+	if (s_dest >= size)
+		return (s_src + size);
+	while (src[i] && (size - 1 > i + s_dest))
 	{
-		dest[length + i] = src[i];
+		dest[i + s_dest] = src[i];
 		i++;
 	}
-	if (length < size)
-		dest[length + i] = 'Z';
-	i = 0;
-	while (src[i])
-		i++;
-	return (length + i);
+	dest[i + s_dest] = '\0';
+	return (s_dest + s_src);
 }
 
-int	main()
+/*int	main()
 {
 	char s1[200] = "123456";
 	char s2[] = "World!";
@@ -75,4 +65,4 @@ int	main()
 	printf("\nWhat I Have : %d", ft_strlcat(s1,s2,10));
 	printf("\n S1 : %s \n S2 : %s", s1, s2);
 	printf("\n %c", s1[13]);
-}
+}*/

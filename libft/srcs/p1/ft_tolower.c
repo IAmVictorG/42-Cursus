@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/04 18:35:58 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/04 18:55:22 by vgiordan         ###   ########.fr       */
+/*   Created: 2022/09/04 18:56:18 by vgiordan          #+#    #+#             */
+/*   Updated: 2022/09/06 17:23:15 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_printable(char *str)
+int	*ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	if (str[0] == '\0')
-	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if (!(str[i] >= 32 && str[i] <= 126))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
 /*
 int	main(void)
 {
-	char msg[] = "";
-	int result = ft_str_is_printable(msg);
-	printf("%d", result);
+	char msg[] = "**ABCZ/23.42dfergF";
+	ft_strupcase(msg);
+	printf("%s", msg);
 }*/

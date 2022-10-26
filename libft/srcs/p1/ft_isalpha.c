@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/04 18:10:50 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/06 10:38:09 by vgiordan         ###   ########.fr       */
+/*   Created: 2022/09/03 14:27:33 by vgiordan          #+#    #+#             */
+/*   Updated: 2022/09/06 10:37:51 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-int	ft_str_is_numeric(char *str)
+int	ft_isalpha(char *str)
 {
 	int	i;
 
@@ -22,9 +23,10 @@ int	ft_str_is_numeric(char *str)
 	}
 	while (str[i] != '\0')
 	{
-		if (!(str[i] >= 48 && str[i] <= 57))
+		if (!(str[i] >= 65 && str[i] <= 90))
 		{
-			return (0);
+			if (!(str[i] >= 97 && str[i] <= 122))
+				return (0);
 		}
 		i++;
 	}
@@ -33,7 +35,7 @@ int	ft_str_is_numeric(char *str)
 /*
 int	main(void)
 {
-	char msg[] = "adadwdagrtlrnetmvwn";
-	int result = ft_str_is_numeric(msg);
+	char msg[] = "dsadasdas dssbfhsdh ";
+	int result = ft_str_is_alpha(msg);
 	printf("%d", result);
 }*/

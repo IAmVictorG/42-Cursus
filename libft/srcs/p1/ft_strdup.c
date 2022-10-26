@@ -29,10 +29,10 @@ char	*ft_strdup(char *src)
 	*p = '\0';
 	return (str);
 }
-int main(int argc, char *argv[])
+/*int main(int argc, char *argv[])
 {
 	char *src = "";
 	ft_strdup(argv[1]);
 	
 	return 0;
-}
+}*/

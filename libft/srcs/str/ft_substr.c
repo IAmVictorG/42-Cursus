@@ -10,26 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-unsigned int	ft_strlen(char const *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	s_size;
-	int				i;
-	char			*result;
+	size_t	s_size;
+	size_t	i;
+	char	*result;
 
 	i = 0;
 	s_size = ft_strlen(s);
