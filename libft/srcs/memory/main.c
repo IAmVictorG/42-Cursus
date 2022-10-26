@@ -12,16 +12,20 @@
 
 #include "../../includes/libft.h"
 
-int main(int argc, char const *argv[])
+
+
+
+int main()
 {
-    char *str1 = "";
-    char *str2 = "";
+    char *s1 = "AAFAAAA";
+    char *s2 = "ABABDEDE";
 
-    ft_memcmp(str1, str2, 8);
     
+    printf("%d\n", ft_memcmp(s1,s2, 1));
+    printf("%d\n", memcmp(s1,s2, 1));
 
-    printf("%s\n", str1);
-    printf("%s\n", str2);
+    printf("%s\n", s1);
+    printf("%s\n", s2);
 
     return 0;
 }
