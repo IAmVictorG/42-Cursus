@@ -1,6 +1,7 @@
 {
+    "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "libft.h": "c"
+        "stdio.h": "c",
+        "memlib.h": "c"
     }
-    
 }

@@ -12,7 +12,7 @@
 
 NAME = ft_tail
 
-SRCS = srcs/ft_tail.c srcs/display.c
+SRCS = srcs/memory/ft_bzero.c
 
 OBJS = ${SRCS:.c=.o}
 

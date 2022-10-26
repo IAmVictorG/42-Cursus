@@ -32,10 +32,10 @@ int	ft_isalpha(char *str)
 	}
 	return (1);
 }
-/*
-int	main(void)
+
+/*int	main(void)
 {
 	char msg[] = "dsadasdas dssbfhsdh ";
-	int result = ft_str_is_alpha(msg);
+	int result = ft_isalpha(msg);
 	printf("%d", result);
 }*/
