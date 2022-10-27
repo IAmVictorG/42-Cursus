@@ -1,33 +1,32 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MakeFile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/26 15:40:16 by marvin            #+#    #+#              #
-#    Updated: 2022/10/26 15:40:16 by marvin           ###   ########.fr        #
+#    Created: 2022/09/17 11:24:17 by vgiordan          #+#    #+#              #
+#    Updated: 2022/09/20 20:35:05 by vgiordan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_tail
-
-SRCS = srcs/memory/ft_bzero.c
+SRCS = ft_display_file.c
 
 OBJS = ${SRCS:.c=.o}
+
+NAME = ft_display_file
 
 RM = rm -f
 
 CC = gcc
 
-includes = includes
-
 CFLAGS = -Wall -Wextra -Werror
 
 .c.o:
-			${CC} ${CFLAGS} -I ${includes} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
+
 
 all:		${NAME} 
 
