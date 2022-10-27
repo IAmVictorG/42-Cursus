@@ -10,33 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "../../includes/libft.h"
+ 
 
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
-}
-
-int	array2dlength(char **strs, int size)
-{
-	int	count;
-	int	i;
-
-	count = 0;
-	i = 0;
-	while (i < size)
-	{
-		count += ft_strlen(strs[i]);
-		i++;
-	}
-	return (count);
-}
 
 void	addsep(char *tab, char *sep, int k)
 {
@@ -74,7 +50,7 @@ void	result_fill(char **strs, char *result, char *sep, int size)
 	result[k] = '\0';
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+char *ft_strjoin(char const *s1, char const *s2)
 {
 	int		k;
 	int		strs_length;

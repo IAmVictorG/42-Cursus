@@ -20,9 +20,7 @@ int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 	i = 0;
 	while (src[i] != '\0')
-	{
 		i++;
-	}
 	string_length = i;
 	i = 0;
 	tot_string_length = string_length + size;

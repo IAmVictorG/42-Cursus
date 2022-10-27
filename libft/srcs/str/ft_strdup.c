@@ -10,23 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
+#include "../../includes/libft.h"
 
 char	*ft_strdup(char *src)
 {
 	char	*str;
-	char	*p;
-	int		len;
+	int		i;
 
-	len = 0;
-	while (src[len])
-		len++;
-	str = malloc(sizeof(*src) * len);
-	p = str;
+	i = 0;
+	str = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	while (*src)
-		*p++ = *src++;
-	*p = '\0';
+		str[i++] = *src++;
+	str[i] = '\0';
 	return (str);
 }
 /*int main(int argc, char *argv[])

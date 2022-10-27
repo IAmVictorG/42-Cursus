@@ -18,18 +18,6 @@ size_t	ft_strlen(char *str)
 
 	i = 0;
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
-
-/*int	main(void)
-{
-	char	*unephrase;
-
-	unephrase = "Hello World";
-	ft_strlen(unephrase);
-	strlen(unephrase);
-	printf("%d", ft_strlen(unephrase));
-}*/
