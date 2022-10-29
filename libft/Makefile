@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
+#    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/17 11:24:17 by vgiordan          #+#    #+#              #
-#    Updated: 2022/09/20 20:35:05 by vgiordan         ###   ########.fr        #
+#    Updated: 2022/10/29 02:37:51 by victorgiord      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

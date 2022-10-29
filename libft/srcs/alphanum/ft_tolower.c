@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:56:18 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/06 17:23:15 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:28:39 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
-/*
-int	main(void)
-{
-	char msg[] = "**ABCZ/23.42dfergF";
-	ft_strupcase(msg);
-	printf("%s", msg);
-}*/

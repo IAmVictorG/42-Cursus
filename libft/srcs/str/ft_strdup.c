@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:16:57 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/20 18:30:22 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:17:19 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,3 @@ char	*ft_strdup(char *src)
 	str[i] = '\0';
 	return (str);
 }
-/*int main(int argc, char *argv[])
-{
-	char *src = "";
-	ft_strdup(argv[1]);
-	
-	return 0;
-}*/

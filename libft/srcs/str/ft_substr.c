@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:30:28 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/24 12:09:34 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:21:41 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (result);
 }
-
-/*int	main(void)
-{
-	char *str = "VICTOR victor DAS";
-	char *r = ft_substr(str, 6, 50);
-	printf("%s", r);
-	return 0;
-}*/

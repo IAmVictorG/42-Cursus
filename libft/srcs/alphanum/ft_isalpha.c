@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:27:33 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/06 10:37:51 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:26:39 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,3 @@ int	ft_isalpha(char *str)
 	}
 	return (1);
 }
-
-/*int	main(void)
-{
-	char msg[] = "dsadasdas dssbfhsdh ";
-	int result = ft_isalpha(msg);
-	printf("%d", result);
-}*/

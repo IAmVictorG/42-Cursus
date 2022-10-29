@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:35:58 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/04 18:55:22 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:27:53 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,3 @@ int	ft_isprint(char *str)
 	}
 	return (1);
 }
-/*
-int	main(void)
-{
-	char msg[] = "";
-	int result = ft_str_is_printable(msg);
-	printf("%d", result);
-}*/

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:09:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/25 14:09:29 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/29 02:20:38 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char *strnstr(const char *big, const char *little, size_t len)
+char	*strnstr(const char *big, const char *little, size_t len)
 {
-    size_t		i;
+	size_t		i;
 	size_t		j;
 
 	i = 0;
@@ -32,4 +32,3 @@ char *strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-

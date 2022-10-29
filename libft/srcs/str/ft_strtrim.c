@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:15:31 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/24 14:40:28 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:25:20 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[i])
 	{
 		if (is_in_charset(s1[i], set) == 0)
-		{
-			result[j] = s1[i];
-			j++;
-		}
+			result[j++] = s1[i];
 		i++;
 	}
 	result[j] = '\0';
 	return (result);
 }
-
-/*int	main(void)
-{
-	char	*s = "Victeor zkw Gzeizoerdani";
-	char	*set = "ezwk";
-
-	printf("%s\n", ft_strtrim(s, set));
-	return (0);
-}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:41:43 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/07 13:46:38 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:18:43 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest[i + s_dest] = '\0';
 	return (s_dest + s_src);
 }
-

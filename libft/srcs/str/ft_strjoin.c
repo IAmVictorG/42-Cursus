@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:58:49 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/20 17:50:57 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:22:58 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		s_s1;
 	int		s_s2;
-	int 	i;
+	int		i;
 	char	*result;
 
 	i = 0;
@@ -31,4 +31,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		result[i++] = *s2++;
 	return (result);
 }
-

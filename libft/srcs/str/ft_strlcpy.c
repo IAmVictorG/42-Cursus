@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 17:11:09 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/09/06 10:45:06 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:19:04 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,3 @@ int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	}
 	return (*dest);
 }
-
-
-/*int main()
-{
-	char message1[] = "Hello Worlddwa";
-	char message2[] = "AAAAAAAAAAA";
-	int i = 0;
-	int n = 10;
-
-	printf("%s", message2);
-	i++;
-
-	printf("%c", '\n');
-	ft_strlcpy(message2, message1, n);
-	i = 0;
-	strlcpy(message2, message1,n);
-
-	printf("%u", ft_strlcpy(message2, message1, n));
-}*/
