@@ -6,11 +6,11 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:16:57 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:17:19 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/29 02:56:31 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 
 char	*ft_strdup(char *src)
 {

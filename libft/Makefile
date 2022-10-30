@@ -6,12 +6,12 @@
 #    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/17 11:24:17 by vgiordan          #+#    #+#              #
-#    Updated: 2022/10/29 02:37:51 by victorgiord      ###   ########.fr        #
+#    Updated: 2022/10/29 14:46:36 by victorgiord      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = \
-		$(addprefix srcs/str/ft_, strlen.c strchr.c strdup.c striteri.c strjoin.c strlcat.c strlcpy.c strmapi.c strncmp.c strnstr.c strrchr.c strtrim.c substr.c) \
+		$(addprefix srcs/str/ft_, split.c strlen.c strchr.c strdup.c striteri.c strjoin.c strlcat.c strlcpy.c strmapi.c strncmp.c strnstr.c strrchr.c strtrim.c substr.c) \
 		$(addprefix srcs/memory/ft_, memset.c memmove.c memcpy.c memcmp.c memchr.c calloc.c bzero.c) \
 		$(addprefix srcs/fd/ft_, putchar_fd.c putendl_fd.c putnbr_fd.c putstr_fd.c) \
 		$(addprefix srcs/alphanum/ft_, atoi.c isalnum.c isalpha.c isascii.c isdigit.c isprint.c itoa.c tolower.c toupper.c)

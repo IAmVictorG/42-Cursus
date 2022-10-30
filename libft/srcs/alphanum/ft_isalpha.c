@@ -6,29 +6,18 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:27:33 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:26:39 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/29 11:50:09 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	if (str[0] == '\0')
+	if (!(c >= 'a' && c <= 'z'))
 	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if (!(str[i] >= 65 && str[i] <= 90))
-		{
-			if (!(str[i] >= 97 && str[i] <= 122))
-				return (0);
-		}
-		i++;
+		if (!(c >= 'A' && c <= 'Z'))
+			return (0);
 	}
 	return (1);
 }

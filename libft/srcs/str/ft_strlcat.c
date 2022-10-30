@@ -6,11 +6,11 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:41:43 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:18:43 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/29 02:56:31 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {

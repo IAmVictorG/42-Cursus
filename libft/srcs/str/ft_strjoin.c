@@ -6,11 +6,11 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:58:49 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:22:58 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/30 17:15:46 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -29,5 +29,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		result[i++] = *s1++;
 	while (*s2)
 		result[i++] = *s2++;
+	result[i] = '\0';
 	return (result);
 }
+/*
+int main(int argc, char const *argv[])
+{
+	char *s1 = "";
+	char *s2 = "Giordani";
+	printf("%s\n", ft_strjoin(s1, s2));
+	return 0;
+}*/

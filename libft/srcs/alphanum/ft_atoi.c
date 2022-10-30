@@ -6,69 +6,64 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:41:43 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:36:16 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/30 17:06:16 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 
-int	negorpos(char *str)
+int	ft_signe(const char *str)
 {
 	int	i;
-	int	signe;
-	int	check;
 
-	signe = 1;
 	i = 0;
-	check = 1;
-	while (!(str[i] <= '9' && str[i] >= '0'))
-	{	
-		if (str[i] == '-' || str[i] == '+')
-			check = 0;
-		if (str[i] == '-')
-			signe *= -1;
-		if (check == 0)
-		{	
-			if (str[i] == ' ' || str[i] == '\f' || str[i] == '\r'
-				|| str[i] == '\n'
-				|| str[i] == '\v')
-				return (0);
-		}
-		i++;
-	}
-	return (signe);
-}
-
-int	ft_atoi(char *str)
-{
-	int	result;
-	int	i;
-	int	check;
-	int	signe;
-
-	check = 0;
-	result = 0;
-	i = 0;
-	signe = negorpos(str);
-	if (signe == 0)
-		return (0);
-	while (str[i] != '\0' && check == 0)
+	while ((!(str[i] >= '0' && str[i] <= '9')) && str[i] != '-'
+		&& str[i] != '+')
 	{
-		if ((str[i] <= '9' && str[i] >= '0'))
-		{
-			result = result * 10 + str[i] - '0';
-			if (!(str[i + 1] <= '9' && str[i + 1] >= '0'))
-				check = 1;
-		}
+		if (str[i] == '\0')
+			return (0);
 		i++;
 	}
-	return (result *= signe);
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i + 1] <= '9' && str[i + 1] >= '0')
+		{
+			if (str[i] == '-')
+				return (-1);
+			return (1);
+		}
+		return (0);
+	}
+	return (1);
 }
-/*
-int main()
-{
-    printf("%d\n", atoi(" -2147483648"));
-    printf("%d", ft_atoi(" --+++-+2147483648"));
 
-    return (0);
-}*/
+int	ft_atoi(const char *str)
+{
+	int	number;
+	int	i;
+
+	i = 0;
+	number = 0;
+	while (!(str[i] >= '0' && str[i] <= '9') && str[i])
+	{
+		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'
+			&& str[i] != '\f' && str[i] != '\v' && str[i] != '\r'
+			&& str[i] != '+' && str[i] != '-')
+			return (0);
+		i++;
+	}
+	while ((str[i] >= '0' && str[i] <= '9') && str[i])
+	{
+		number = number * 10 + str[i] - '0';
+		i++;
+	}
+	return (number * ft_signe(str));
+}
+/*int main(int argc, char const *argv[])
+{
+	char *nb = "   a475";
+	printf("%d\n", atoi(nb));
+	printf("%d\n", ft_atoi(nb));
+	return 0;
+}
+*/

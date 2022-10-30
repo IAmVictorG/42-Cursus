@@ -6,11 +6,11 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 16:21:58 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:35:12 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/29 02:56:31 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 
 size_t	ft_strlen(const char *str)
 {

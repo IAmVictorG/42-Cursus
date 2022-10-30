@@ -6,11 +6,11 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:30:28 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:21:41 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/30 15:59:24 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -20,18 +20,31 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	s_size = ft_strlen(s);
-	if (start > s_size - 1)
+	if (start > (s_size - 1))
 	{
-		return (NULL);
+		result = malloc(1 * sizeof(char));
+		result[0] = '\0';
+		return (result);
 	}
 	if (start + len > s_size)
-		result = malloc((s_size - start) * sizeof(char));
+		result = malloc((s_size - start + 1) * sizeof(char));
 	else
-		result = malloc(len * sizeof(char));
+		result = malloc((len + 1) * sizeof(char));
 	while (i < len && s[i] != '\0')
 	{
 		result[i] = s[start + i];
 		i++;
 	}
+	result[i] = '\0';
 	return (result);
 }
+
+/*int main()
+{
+	char *test = "lorem ipsum";
+	
+   // printf("%s\n", substr(test, 0, 10));
+	printf("%s\n", ft_substr(test, 400, 20));
+	return 0;
+}
+*/

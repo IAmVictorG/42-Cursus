@@ -6,7 +6,7 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 01:45:32 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/10/29 02:36:27 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/29 03:14:06 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strdup(char *src);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);

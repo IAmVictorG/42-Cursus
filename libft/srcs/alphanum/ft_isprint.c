@@ -6,28 +6,15 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:35:58 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/29 02:27:53 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/29 11:52:02 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isprint(char *str)
+int	ft_isprint(char c)
 {
-	int	i;
-
-	i = 0;
-	if (str[0] == '\0')
-	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if (!(str[i] >= 32 && str[i] <= 126))
-		{
-			return (0);
-		}
-		i++;
-	}
+	if (!(c >= 32 && c <= 126))
+		return (0);
 	return (1);
 }

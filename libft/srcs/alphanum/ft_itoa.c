@@ -6,11 +6,11 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:42:42 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/29 02:32:48 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/30 15:42:17 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 
 int	sizeofn(int n)
 {
@@ -51,10 +51,11 @@ char	*ft_itoa(int n)
 	}
 	while (n > 9)
 	{
-		result[n_size - i++ - 2] = n % 10 + '0';
+		result[n_size - i - 1] = n % 10 + '0';
 		n /= 10;
+		i++;
 	}
 	result[n_size - i - 1] = n % 10 + '0';
-	result[n_size - 1] = '\0';
+	result[n_size] = '\0';
 	return (result);
 }
