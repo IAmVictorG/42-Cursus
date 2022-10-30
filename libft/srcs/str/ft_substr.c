@@ -6,7 +6,7 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:30:28 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/10/30 15:59:24 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/30 22:49:45 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	s_size = ft_strlen(s);
-	if (start > (s_size - 1))
+	if (start >= (s_size))
 	{
 		result = malloc(1 * sizeof(char));
 		result[0] = '\0';

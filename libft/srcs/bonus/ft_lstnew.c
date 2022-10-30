@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 01:00:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/30 23:03:06 by victorgiord      ###   ########.fr       */
+/*   Created: 2022/10/30 21:56:34 by victorgiord       #+#    #+#             */
+/*   Updated: 2022/10/30 22:20:35 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-char	*ft_strchr(const char *str, int c)
+t_list	*ft_lstnew(void *content)
 {
-	while (*str != '\0')
-	{
-		if (*str == c)
-			return ((char *)str);
-		str++;
-	}
-	if (c == *str)
-		return ((char *)str);
-	return (NULL);
+	t_list	*mav;
+
+	mav = (t_list *)malloc(sizeof(t_list));
+	if (!mav)
+		return (NULL);
+	mav->content = "Salut";
+	mav->next = NULL;
+	return (mav);
 }
 
-int main(int argc, char const *argv[])
+/*int main(int argc, char const *argv[])
 {
-	char *test = "teste";
-
-	printf("%s\n", ft_strchr(test, 'x'));
-    printf("%p\n", ft_strchr(test, 'x'));
+	printf("%s\n",ft_lstnew("SDA")->content);
 	return 0;
-}
+}*/

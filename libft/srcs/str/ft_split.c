@@ -6,7 +6,7 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:44:32 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/10/30 17:58:14 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/30 18:40:38 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	result = (char **)malloc(sizeof(char *) * count_word(s, c));
+	result = (char **)malloc(sizeof(char *) * (count_word(s, c)));
 	while (s[i])
 	{
 		size = 0;
@@ -60,15 +60,17 @@ char	**ft_split(char const *s, char c)
 	}
 	return (result);
 }
-
-/*int main(int argc, char const *argv[])
+/*
+int main(int argc, char const *argv[])
 {
-	char *str = "Victor Giordani est malade";
-	char c = ' ';
+	char *str = "";
+	char c = 'z';
 	char **result = ft_split(str,c);
 	printf("%s\n", result[0]);
 	printf("%s\n", result[1]);
 	printf("%s\n", result[2]);
 	printf("%s\n", result[3]);
+	//printf("%s\n", result[4]);
+	//printf("%s\n", result[5]);
 	return 0;
 }*/

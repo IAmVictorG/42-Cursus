@@ -6,7 +6,7 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 01:45:32 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/10/29 03:14:06 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/10/30 22:28:02 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,13 @@ char	*ft_strnstr(const char *s, const char *need, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+//t_list	*ft_lstnew(void *content);
 
 #endif
