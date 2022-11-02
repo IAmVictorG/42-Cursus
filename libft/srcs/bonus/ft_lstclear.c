@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 01:00:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 00:04:47 by victorgiord      ###   ########.fr       */
+/*   Created: 2022/10/31 01:41:27 by victorgiord       #+#    #+#             */
+/*   Updated: 2022/10/31 20:47:09 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!str)
-		return (NULL);
-	while (*str)
-	{
-		if (*str == (char)c)
-			return ((char *) str);
-		str++;
-	}
-	if ((char)c == *str)
-		return ((char *)str);
-	return (NULL);
+	
 }
-
-/*int main(int argc, char const *argv[])
-{
-	char *test = "teste";
-
-	printf("%s\n", ft_strchr(test, 'x'));
-    printf("%p\n", ft_strchr(test, 'x'));
-	return 0;
-}*/

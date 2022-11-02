@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   argstest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 01:00:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 00:04:47 by victorgiord      ###   ########.fr       */
+/*   Created: 2022/11/01 19:04:25 by victorgiord       #+#    #+#             */
+/*   Updated: 2022/11/01 19:13:29 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include <stdarg.h>
+#include <stdio.h>
 
-char	*ft_strchr(const char *str, int c)
+void    print_ints(int num, ...)
 {
-	if (!str)
-		return (NULL);
-	while (*str)
-	{
-		if (*str == (char)c)
-			return ((char *) str);
-		str++;
-	}
-	if ((char)c == *str)
-		return ((char *)str);
-	return (NULL);
+    va_list args;
+    int     i;
+
+    i = 0;
+    va_start(args, num);
+    while (i < num)
+    {
+        int value = va_arg(args,int);
+        printf("%d: %d\n", i, value);
+        i++;
+    }
+    va_end(args);
 }
 
-/*int main(int argc, char const *argv[])
+int main(int argc, char const *argv[])
 {
-	char *test = "teste";
-
-	printf("%s\n", ft_strchr(test, 'x'));
-    printf("%p\n", ft_strchr(test, 'x'));
-	return 0;
-}*/
+    print_ints(3, 12, 32, 54);
+    return (0);
+}

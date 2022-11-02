@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 01:00:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 00:04:47 by victorgiord      ###   ########.fr       */
+/*   Created: 2022/10/31 22:39:05 by victorgiord       #+#    #+#             */
+/*   Updated: 2022/10/31 22:51:25 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../includes/ft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putnbr(int nb)
 {
-	if (!str)
-		return (NULL);
-	while (*str)
+	if (nb == -2147483648)
 	{
-		if (*str == (char)c)
-			return ((char *) str);
-		str++;
+		ft_putstr("-2147483648");
 	}
-	if ((char)c == *str)
-		return ((char *)str);
-	return (NULL);
+	else
+	{
+		if (nb < 0)
+		{
+			write(1, "-", 1);
+			nb = -nb;
+		}
+		if (nb < 10)
+		{
+			putchar(nb + 48);
+		}
+		else
+		{
+			ft_putnbr(nb / 10);
+			nb = nb % 10;
+			putchar(nb + 48);
+		}
+	}
 }
-
-/*int main(int argc, char const *argv[])
-{
-	char *test = "teste";
-
-	printf("%s\n", ft_strchr(test, 'x'));
-    printf("%p\n", ft_strchr(test, 'x'));
-	return 0;
-}*/

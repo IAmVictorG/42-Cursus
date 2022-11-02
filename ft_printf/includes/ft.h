@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 01:00:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 00:04:47 by victorgiord      ###   ########.fr       */
+/*   Created: 2022/10/31 14:05:19 by victorgiord       #+#    #+#             */
+/*   Updated: 2022/10/31 22:43:59 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
 
-char	*ft_strchr(const char *str, int c)
-{
-	if (!str)
-		return (NULL);
-	while (*str)
-	{
-		if (*str == (char)c)
-			return ((char *) str);
-		str++;
-	}
-	if ((char)c == *str)
-		return ((char *)str);
-	return (NULL);
-}
-
-/*int main(int argc, char const *argv[])
-{
-	char *test = "teste";
-
-	printf("%s\n", ft_strchr(test, 'x'));
-    printf("%p\n", ft_strchr(test, 'x'));
-	return 0;
-}*/
+void    ft_putstr(char *str);
+void	ft_putnbr(int nbr);
+void    ft_putchar(char c);

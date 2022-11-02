@@ -6,7 +6,7 @@
 #    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/17 11:24:17 by vgiordan          #+#    #+#              #
-#    Updated: 2022/10/30 22:16:05 by victorgiord      ###   ########.fr        #
+#    Updated: 2022/10/31 22:10:01 by victorgiord      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = \
 
 OBJS = ${SRCS:.c=.o}
 
-BONUSSRCS = $(addprefix srcs/bonus/ft_, lstnew.c)
+BONUSSRCS = $(addprefix srcs/bonus/ft_, lstnew.c lstadd_front.c lstclear.c lsdtdelone.c lisiter.c lstlast.c lstmap.c lstsize.c)
 
 BONUSOBJS = ${BONUSSCRS:.c=.o}
 
