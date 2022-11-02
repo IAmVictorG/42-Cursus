@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
+#    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 22:53:58 by victorgiord       #+#    #+#              #
-#    Updated: 2022/10/31 23:06:17 by victorgiord      ###   ########.fr        #
+#    Updated: 2022/11/02 09:57:53 by vgiordan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = monprog
 
-SRCS = $(addprefix srcs/ft_, printf.c putstr.c putnbr.c putchar.c)
+SRCS = $(addprefix srcs/ft_, printf.c putstr.c putnbr.c putchar.c printhexa.c)
 
 OBJS = ${SRCS:.c=.o}
 

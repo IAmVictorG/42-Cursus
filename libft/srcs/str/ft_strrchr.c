@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 01:14:31 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 00:11:59 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/02 13:57:06 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *str, int c)
 	char	*result;
 
 	result = NULL;
-	if (!str)
-		return (NULL);
 	while (*str)
 	{
 		if (*str == (char) c)

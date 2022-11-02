@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:09:00 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/01 21:33:18 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/02 10:00:22 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,13 @@ int	formats(const char format, va_list args)
 	else if (format == 'd')
 		ft_putnbr(va_arg(args, int));
 	else if (format == 'x')
-		ft_putchar(format);
+		ft_printhexa(va_arg(args, size_t), BASEHEXAMIN);
+	else if (format == 'X')
+		ft_printhexa(va_arg(args, size_t), "0123456789ABCDEF");
+	else if (format == 'u')
+		ft_putnbr(va_arg(args, unsigned int));
+	else if (format == '%')
+		ft_putchar('%');
 	else
 		ft_putchar(format);
 	return (0);
@@ -49,8 +55,8 @@ int	main(int argc, char const *argv[])
 	(void) argc;
 	(void) argv;
 	printf("Me : \n");
-	ft_printf("%sZZZZ%dEND\n", "12345", 76);
+	ft_printf("%X\n", 76);
 	printf("\nExpected : \n");
-	printf("%sZZZZ%dEND\n", "12345", 76);
-	return 0;
+	printf("%X\n", 76);
+	return (0);
 }

@@ -3,23 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 23:49:55 by apuchill          #+#    #+#             */
-/*   Updated: 2022/11/01 14:06:21 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/02 16:30:11 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** LIBRARY: N/A
-** SYNOPSIS: split string, with specified character as delimiter, into an array
-**			of strings
-**
-** DESCRIPTION:
-** 		Allocates (with malloc(3)) and returns an array of strings obtained by
-**	splitting ’s’ using the character ’c’ as a delimiter. The array must be
-**	ended by a NULL pointer.
-*/
 
 #include "../../libft.h"
 
@@ -59,45 +48,52 @@ char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+void	freemalloc(char **result, size_t j)
+{
+	while (j)
+	{
+		free(result[j]);
+		j--;
+	}
+	free(result);
+}
+
+void	process(char const *s, char **result, char c)
 {
 	size_t	i;
 	size_t	j;
 	int		index;
-	char	**result;
-	char	*temp;
 
-	result = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !result)
-		return (NULL);
-	i = 0;
 	j = 0;
 	index = -1;
+	i = 0;
 	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			result[j++] = word_dup(s, index, i);
+			result[j] = word_dup(s, index, i);
+			if (!result[j])
+			{
+				freemalloc(result, j);
+				break ;
+			}
+			j++;
 			index = -1;
 		}
 		i++;
 	}
 	result[j] = NULL;
-	return (result);
 }
 
-
-int main()
+char	**ft_split(char const *s, char c)
 {
-	char **result = ft_split("0 1 2 3", ' ');
+	char	**result;
 
-	printf("%s\n", result[0]);
-	printf("%s\n", result[1]);
-	printf("%s\n", result[2]);
-	printf("%s\n", result[3]);
-	//printf("%s\n", result[4]);
-
-	return 0;
+	result = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !result)
+		return (NULL);
+	process(s, result, c);
+	return (result);
 }

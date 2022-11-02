@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:28:40 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/30 16:01:51 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/02 13:20:54 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	char_compare = 0;
 	if (s1 == s2)
 		return (char_compare);
-	while (n > 0)
+	while (n)
 	{
 		if (*char_s1 != *char_s2)
 		{
@@ -34,9 +34,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		(void)*char_s1++;
 		(void)*char_s2++;
 	}
-	if (char_compare < 0)
-		return (-1);
-	else if (char_compare == 0)
-		return (0);
-	return (1);
+	return (char_compare);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
+#    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/17 11:24:17 by vgiordan          #+#    #+#              #
-#    Updated: 2022/10/31 22:10:01 by victorgiord      ###   ########.fr        #
+#    Updated: 2022/11/02 11:27:53 by vgiordan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,5 @@ fclean:	clean
 		-${RM} ${NAME}
 
 re:		fclean all
-
-bonus: ${OBJS} ${BONUSOBJS}
-		ar -rcs ${NAME} ${OBJS} ${BONUSOBJS}
 
 .PHONY: all clean fclean re bonus
