@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
+#    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 22:53:58 by victorgiord       #+#    #+#              #
-#    Updated: 2022/11/02 09:57:53 by vgiordan         ###   ########.fr        #
+#    Updated: 2022/11/03 17:48:04 by victorgiord      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = monprog
+NAME = libftprintf.a
 
-SRCS = $(addprefix srcs/ft_, printf.c putstr.c putnbr.c putchar.c printhexa.c)
+SRCS = $(addprefix ft_, printf.c putstr.c putnbr.c putchar.c printhexa.c)
 
 OBJS = ${SRCS:.c=.o}
 
@@ -28,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			${CC} -o ${NAME} ${OBJS}
+			ar -rcs ${NAME} ${OBJS}
 
 all:		${NAME} 
 

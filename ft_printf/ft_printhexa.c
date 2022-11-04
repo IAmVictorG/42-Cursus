@@ -3,32 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:46:08 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/02 10:04:38 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:52:57 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
-
-void	ft_rev_int_tab(char *tab, int size)
-{
-	int	i;
-	int	j;
-	int	temp;
-
-	i = 0;
-	j = size;
-	while (i < (size / 2))
-	{
-		temp = tab[i];
-		tab[i] = tab[j - 1];
-		tab[j - 1] = temp;
-		i++;
-		j--;
-	}
-}
+#include "ft_printf.h"
 
 int	isneg(int nbr)
 {
@@ -44,7 +26,6 @@ void	ft_printhexa(size_t nb, char *base)
 	int				i;
 	int				is_neg;
 
-	printf("printHEXA");
 	i = 0;
 	tab = malloc(16 * sizeof(int));
 	is_neg = isneg(nb);
@@ -58,8 +39,7 @@ void	ft_printhexa(size_t nb, char *base)
 	}
 	tab[i] = base[nb];
 	if (is_neg == 1)
-		tab[i + 1] = '-';
-	ft_rev_int_tab(tab, 16);
-	printf("%s\n", tab);
+		ft_putchar('-');
+	ft_reverse(tab, i + 1);
 	ft_putstr(tab);
 }

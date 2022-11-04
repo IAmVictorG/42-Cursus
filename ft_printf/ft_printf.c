@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:09:00 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/02 10:00:22 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:50:56 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#include "ft_printf.h"
 
 int	formats(const char format, va_list args)
 {
@@ -26,6 +26,8 @@ int	formats(const char format, va_list args)
 		ft_printhexa(va_arg(args, size_t), "0123456789ABCDEF");
 	else if (format == 'u')
 		ft_putnbr(va_arg(args, unsigned int));
+	else if (format == 'i')
+		ft_putnbr(va_arg(args, int));
 	else if (format == '%')
 		ft_putchar('%');
 	else
@@ -50,13 +52,13 @@ int	ft_printf(const char *s, ...)
 	return (0);
 }
 
-int	main(int argc, char const *argv[])
+/*int	main(int argc, char const *argv[])
 {
 	(void) argc;
 	(void) argv;
 	printf("Me : \n");
-	ft_printf("%X\n", 76);
-	printf("\nExpected : \n");
-	printf("%X\n", 76);
+	ft_printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 030);
+	printf("Expected : \n");
+	printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 030);
 	return (0);
-}
+}*/

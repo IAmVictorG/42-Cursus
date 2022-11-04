@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 22:33:22 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/10/31 23:11:32 by victorgiord      ###   ########.fr       */
+/*   Created: 2022/10/31 22:34:50 by victorgiord       #+#    #+#             */
+/*   Updated: 2022/11/03 17:53:09 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#include "ft_printf.h"
 
-void    ft_putstr(char *str)
+void	ft_putchar(char c)
 {
-    while (*str)
-        ft_putchar(*str++);  
+	write(1, &c, 1);
 }
