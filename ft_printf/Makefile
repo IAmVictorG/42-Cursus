@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
+#    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 22:53:58 by victorgiord       #+#    #+#              #
-#    Updated: 2022/11/03 17:48:04 by victorgiord      ###   ########.fr        #
+#    Updated: 2022/11/04 14:09:17 by vgiordan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = $(addprefix ft_, printf.c putstr.c putnbr.c putchar.c printhexa.c)
+SRCS = $(addprefix ft_, printf.c putstr.c putnbr.c printchar.c printhexa.c print_pointers.c print_unsigned_int.c)
 
 OBJS = ${SRCS:.c=.o}
 

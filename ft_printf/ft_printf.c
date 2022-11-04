@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:09:00 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/03 17:50:56 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/04 14:15:55 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,49 @@
 
 int	formats(const char format, va_list args)
 {
+	int	len;
+
+	len = 0;
 	if (format == 's')
-		ft_putstr(va_arg(args, char *));
+		len += ft_putstr(va_arg(args, char *));
 	else if (format == 'c')
-		ft_putchar(va_arg(args, int));
+		len += ft_printchar(va_arg(args, int));
 	else if (format == 'd')
-		ft_putnbr(va_arg(args, int));
+		len += ft_putnbr(va_arg(args, int));
 	else if (format == 'x')
-		ft_printhexa(va_arg(args, size_t), BASEHEXAMIN);
+		len += ft_print_hexa(va_arg(args, size_t), BASEHEXAMIN);
 	else if (format == 'X')
-		ft_printhexa(va_arg(args, size_t), "0123456789ABCDEF");
+		len += ft_print_hexa(va_arg(args, size_t), "0123456789ABCDEF");
 	else if (format == 'u')
-		ft_putnbr(va_arg(args, unsigned int));
+		len += ft_print_unsigned_int(va_arg(args, unsigned int));
 	else if (format == 'i')
-		ft_putnbr(va_arg(args, int));
+		len += ft_putnbr(va_arg(args, int));
+	else if (format == 'p')
+		len += ft_print_pointer(va_arg(args, size_t));
 	else if (format == '%')
-		ft_putchar('%');
+		len += ft_printchar('%');
 	else
-		ft_putchar(format);
-	return (0);
+		len += ft_printchar(format);
+	return (len);
 }
 
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
+	int		len;
 
 	va_start(args, s);
+	len = 0;
 	while (*s)
 	{
 		if (*s == '%')
-			formats(*(++s), args);
+			len += formats(*(++s), args);
 		else
-			ft_putchar(*s);
+			len += ft_printchar(*s);
 		s++;
 	}
 	va_end(args);
-	return (0);
+	return (len);
 }
 
 /*int	main(int argc, char const *argv[])
@@ -57,8 +64,9 @@ int	ft_printf(const char *s, ...)
 	(void) argc;
 	(void) argv;
 	printf("Me : \n");
-	ft_printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 030);
+	ft_printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 3000);
 	printf("Expected : \n");
-	printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 030);
+	printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 3000);
 	return (0);
-}*/
+}
+*/

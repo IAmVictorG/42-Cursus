@@ -3,43 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:46:08 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/03 17:52:57 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/04 14:42:26 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	isneg(int nbr)
+void	ft_putchar(char c)
 {
-	if (nbr < 0)
-		return (1);
-	return (0);
+	write(1, &c, 1);
 }
 
-void	ft_printhexa(size_t nb, char *base)
+int	ft_hex_len(size_t nb)
 {
-	int				mod;
-	char			*tab;
+	int	len;
+
+	len = 0;
+	while (nb > 0)
+	{
+		len++;
+		nb = nb / 16;
+	}
+	return (len);
+}
+
+int	ft_print_hexa_process(size_t nb, char *base)
+{
 	int				i;
-	int				is_neg;
 
 	i = 0;
-	tab = malloc(16 * sizeof(int));
-	is_neg = isneg(nb);
-	if (is_neg == 1)
-		nb = nb * (-1);
-	while (nb >= 16)
+	if (nb < 0)
+		nb = -nb;
+	if (nb > 0)
 	{
-		mod = nb % 16;
-		nb = nb / 16;
-		tab[i++] = base[mod];
+		ft_print_hexa(nb / 16, base);
+		ft_printchar(base[nb % 16]);
 	}
-	tab[i] = base[nb];
-	if (is_neg == 1)
-		ft_putchar('-');
-	ft_reverse(tab, i + 1);
-	ft_putstr(tab);
+	return (ft_hex_len(nb));
+}
+
+int	ft_print_hexa(size_t nb, char *base)
+{
+	return (ft_print_hexa_process(nb, base));
 }

@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_print_pointers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 11:37:42 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/04 14:08:34 by vgiordan         ###   ########.fr       */
+/*   Created: 2022/11/04 13:24:53 by vgiordan          #+#    #+#             */
+/*   Updated: 2022/11/04 14:20:20 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_print_pointer(size_t pt)
 {
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		n = -n;
-		write(fd, "-", 1);
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_printchar_fd((n % 10) + '0', fd);
+	ft_putstr("0x");
+	if (pt == 0)
+		return (ft_printchar('0') + 2);
+	return (ft_print_hexa(pt, BASEHEXAMIN) + 2);
 }

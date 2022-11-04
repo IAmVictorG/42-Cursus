@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:05:19 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/03 17:57:13 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/04 14:26:55 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@
 # define BASEHEXAMAJ "0123456789ABCDEF"
 
 int		ft_printf(const char *s, ...);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nbr);
-void	ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_putnbr(int nbr);
+int		ft_printchar(char c);
 void	ft_reverse(char *tab, int size);
-void	ft_printhexa(size_t nb, char *base);
+int		ft_print_hexa(size_t nb, char *base);
+int		ft_print_pointer(size_t pt);
+int		ft_print_unsigned_int(unsigned int nb);
 
 #endif

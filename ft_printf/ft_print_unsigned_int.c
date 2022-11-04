@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 22:39:05 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/04 14:08:34 by vgiordan         ###   ########.fr       */
+/*   Created: 2022/11/04 13:46:05 by vgiordan          #+#    #+#             */
+/*   Updated: 2022/11/04 14:28:39 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	getnbsize(int nb)
+int	getnbsizeu(unsigned int nb)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	getnbsize(int nb)
 	return (i);
 }
 
-void	ft_reverse(char *tab, int size)
+void	ft_reverseu(char *tab, int size)
 {
 	int		i;
 	char	temp;
@@ -42,7 +42,7 @@ void	ft_reverse(char *tab, int size)
 	}
 }
 
-void	process(int nb, int size)
+void	processu(unsigned int nb, int size)
 {
 	char	*result;
 	int		i;
@@ -62,7 +62,7 @@ void	process(int nb, int size)
 		result[i++] = nb % 10 + '0';
 		nb /= 10;
 	}
-	ft_reverse(result, size);
+	ft_reverseu(result, size);
 	if (isneg)
 		result[i + 1] = '\0';
 	else
@@ -71,7 +71,7 @@ void	process(int nb, int size)
 	free(result);
 }
 
-int	ft_putnbr(int nb)
+int	ft_print_unsigned_int(unsigned int nb)
 {
 	int		size;
 
@@ -80,15 +80,9 @@ int	ft_putnbr(int nb)
 		ft_printchar('0');
 		return (1);
 	}
-	size = getnbsize(nb);
+	size = getnbsizeu(nb);
 	if (nb < 0)
 		size++;
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return (11);
-	}
-	else
-		process(nb, size);
+	processu(nb, size);
 	return (size);
 }
