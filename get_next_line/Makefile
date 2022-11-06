@@ -6,11 +6,11 @@
 #    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 13:36:14 by victorgiord       #+#    #+#              #
-#    Updated: 2022/11/05 13:48:39 by victorgiord      ###   ########.fr        #
+#    Updated: 2022/11/06 00:12:49 by victorgiord      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = get_next_line.c get_next_line_utils.c
+SRCS = get_next_line.c get_next_line_utils.c main.c
 
 OBJS = ${SRCS:.c=.o}
 
