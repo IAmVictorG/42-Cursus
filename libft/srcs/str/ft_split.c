@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 23:49:55 by apuchill          #+#    #+#             */
-/*   Updated: 2022/11/02 16:30:11 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:09:26 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,9 @@ char	*word_dup(const char *str, int start, int finish)
 
 void	freemalloc(char **result, size_t j)
 {
-	while (j)
+	while (1 + j--)
 	{
 		free(result[j]);
-		j--;
 	}
 	free(result);
 }
@@ -77,7 +76,9 @@ void	process(char const *s, char **result, char c)
 			if (!result[j])
 			{
 				freemalloc(result, j);
-				break ;
+				result[0] = malloc(1);
+				result[0] = NULL;
+				return ;
 			}
 			j++;
 			index = -1;

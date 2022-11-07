@@ -6,7 +6,7 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:19:30 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/06 00:59:45 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/06 13:46:22 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,14 @@
 # include <strings.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <string.h>
 
 # ifndef BUFFER_SIZE
-#  define  BUFFER_SIZE 5
+#  define  BUFFER_SIZE 6
 # endif
 
-typedef struct s_list
-{
-	char	*data;
-	struct s_list *next;
-}			t_list;
-
 char	*get_next_line(int fd);
-void	add_to_remain(t_list remain, int red, char *buff);
-int		new_line_exist(t_list *remain);
+void	add_to_line(char *line, int red, char *buff);
+size_t	ft_strlcat(char *dest, char *src, size_t size);
 
 #endif

@@ -6,63 +6,56 @@
 /*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:41:03 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/06 00:58:24 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/06 13:45:16 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	new_line_exist(t_list *remain)
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+void add_to_line(char *line, int red, char *buff)
 {
 	int	i;
-	t_list *current;
 
-	if (!remain)
-		return (0);
-	current = get_last(remain);
 	i = 0;
-	while (current->data[i])
+	while (buff[i])
 	{
-		if (current->data[i] == '\n')
-			return (1);
+
+		if (buff[i] == '\n' || buff[i] == '\0')
+		{
+			printf("%s", buff);
+			//ft_strnjoin(line, buff, i);
+		}
 		i++;
 	}
-	return (0);
+	
 }
 
-t_list *get_last(t_list *remain)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	while (remain && remain->next)
-		remain = remain->next;
-	return (remain);
-}
+	size_t	s_dest;
+	size_t	s_src;
+	size_t	i;
 
-void	add_to_remain(t_list remain, int red, char *buff)
-{
-	t_list	*current;
-	t_list	*new_node;
-	int		i;
-
-	new_node = malloc(sizeof(t_list));
-	if (!new_node)
-		return ;
-	new_node->next = NULL;
-	new_node->content = malloc(sizeof(char) * (red + 1));
-	if (new_node->data == NULL)
-		return ;
 	i = 0;
-	while (buff[i] && i < red)
+	s_dest = ft_strlen(dest);
+	s_src = ft_strlen(src);
+	if (s_dest >= size)
+		return (s_src + size);
+	while (src[i] && (size - 1 > i + s_dest))
 	{
-		new_node->data[i] = buff[i];
+		dest[i + s_dest] = src[i];
 		i++;
 	}
-	new_node->data[i] = '\0';
-	if (*remain == NULL)
-	{
-		*remain = new_node;
-		return ;
-	}
-	current = get_last(remain);
-	current->next = new_node;
+	dest[i + s_dest] = '\0';
+	return (s_dest + s_src);
 }
-

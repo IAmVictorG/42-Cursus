@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:09:56 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/04 14:08:34 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/05 17:03:18 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
 	{
-		ft_printchar_fd(*s++, fd);
+		ft_putchar_fd(*s++, fd);
 	}
 }

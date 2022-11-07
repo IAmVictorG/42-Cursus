@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:46:08 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/04 14:42:26 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/07 08:13:11 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,6 @@ int	ft_hex_len(size_t nb)
 
 int	ft_print_hexa_process(size_t nb, char *base)
 {
-	int				i;
-
-	i = 0;
-	if (nb < 0)
-		nb = -nb;
 	if (nb > 0)
 	{
 		ft_print_hexa(nb / 16, base);

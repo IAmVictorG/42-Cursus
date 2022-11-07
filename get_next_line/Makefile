@@ -6,7 +6,7 @@
 #    By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 13:36:14 by victorgiord       #+#    #+#              #
-#    Updated: 2022/11/06 00:12:49 by victorgiord      ###   ########.fr        #
+#    Updated: 2022/11/06 11:00:32 by victorgiord      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,12 @@ RM = rm
 
 CC = gcc
 
-INCLUDES = get_next_line.h
+INCLUDES = r
 
 CFLAGS = -Wall -Wextra -Werror
 
 .c.o:
-			${CC} ${CFLAGS} -I -c $< -o ${<:.c=.o}
+			${CC} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 			${CC} -o ${NAME} ${OBJS} 

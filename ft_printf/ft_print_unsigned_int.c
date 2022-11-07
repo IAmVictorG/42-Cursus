@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:46:05 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/04 14:28:39 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/07 08:13:59 by victorgiord      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	getnbsizeu(unsigned int nb)
 	int	i;
 
 	i = 0;
-	if (nb < 0)
-		nb = -nb;
 	while (nb > 0)
 	{
 		nb /= 10;
@@ -51,12 +49,6 @@ void	processu(unsigned int nb, int size)
 	isneg = 0;
 	i = 0;
 	result = malloc((size + 1) * sizeof(char));
-	if (nb < 0)
-	{
-		nb = -nb;
-		result[size - 1] = '-';
-		isneg = 1;
-	}
 	while (nb > 0)
 	{
 		result[i++] = nb % 10 + '0';
@@ -81,8 +73,7 @@ int	ft_print_unsigned_int(unsigned int nb)
 		return (1);
 	}
 	size = getnbsizeu(nb);
-	if (nb < 0)
-		size++;
+
 	processu(nb, size);
 	return (size);
 }
