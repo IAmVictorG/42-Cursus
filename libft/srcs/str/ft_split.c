@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 23:49:55 by apuchill          #+#    #+#             */
-/*   Updated: 2022/11/07 17:07:58 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:20:34 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ int	process(char const *s, char **result, char c)
 			i++;
 		if (j < count_words(s, c))
 		{
-			result[j] = word_dup(s, start, i);
-			if (!result[j])
+			result[j++] = word_dup(s, start, i);
+			if (!result[j - 1])
 			{
-				freemalloc(result, j++);
+				freemalloc(result, j - 1);
 				return (-1);
 			}
 		}
