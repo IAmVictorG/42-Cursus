@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:05:19 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/04 14:26:55 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:45:14 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@
 # include <strings.h>
 # include <stdlib.h>
 
-# define BASEHEXAMIN "0123456789abcdef"
-# define BASEHEXAMAJ "0123456789ABCDEF"
+# ifndef BASEHEXAMIN
+#  define BASEHEXAMIN "0123456789abcdef"
+# endif
+# ifndef BASEHEXAMAJ
+#  define BASEHEXAMAJ "0123456789ABCDEF"
+# endif
 
 int		ft_printf(const char *s, ...);
 int		ft_putstr(char *str);

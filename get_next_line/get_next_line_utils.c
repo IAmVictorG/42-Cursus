@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:41:03 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/06 13:45:16 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/07 11:11:47 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,40 +22,44 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-void add_to_line(char *line, int red, char *buff)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	int		s_s1;
+	int		s_s2;
+	int		i;
+	char	*result;
 
 	i = 0;
-	while (buff[i])
-	{
-
-		if (buff[i] == '\n' || buff[i] == '\0')
-		{
-			printf("%s", buff);
-			//ft_strnjoin(line, buff, i);
-		}
-		i++;
-	}
-	
+	s_s1 = ft_strlen(s1);
+	s_s2 = ft_strlen(s2);
+	result = malloc((s_s1 + s_s2 + 1) * sizeof(char));
+	if (!result || !s1 || !s2)
+		return (NULL);
+	while (*s1)
+		result[i++] = *s1++;
+	while (*s2)
+		result[i++] = *s2++;
+	result[i] = '\0';
+	return (result);
 }
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+char	*ft_strnjoin(char const *s1, char const *s2, int n)
 {
-	size_t	s_dest;
-	size_t	s_src;
-	size_t	i;
+	int		s_s1;
+	int		s_s2;
+	int		i;
+	char	*result;
 
 	i = 0;
-	s_dest = ft_strlen(dest);
-	s_src = ft_strlen(src);
-	if (s_dest >= size)
-		return (s_src + size);
-	while (src[i] && (size - 1 > i + s_dest))
-	{
-		dest[i + s_dest] = src[i];
-		i++;
-	}
-	dest[i + s_dest] = '\0';
-	return (s_dest + s_src);
+	s_s1 = ft_strlen(s1);
+	s_s2 = ft_strlen(s2);
+	result = malloc((s_s1 + s_s2 + 1) * sizeof(char));
+	if (!result || !s1 || !s2)
+		return (NULL);
+	while (*s1)
+		result[i++] = *s1++;
+	while (*s2 && n-- > 0)
+		result[i++] = *s2++;
+	result[i] = '\0';
+	return (result);
 }

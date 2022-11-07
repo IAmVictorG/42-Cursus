@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:46:08 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/07 08:13:11 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/07 15:07:23 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_hex_len(size_t nb)
+unsigned int	ft_hex_len(size_t nb)
 {
 	int	len;
 
@@ -30,7 +30,7 @@ int	ft_hex_len(size_t nb)
 	return (len);
 }
 
-int	ft_print_hexa_process(size_t nb, char *base)
+unsigned int	ft_print_hexa_process(size_t nb, char *base)
 {
 	if (nb > 0)
 	{
@@ -40,7 +40,7 @@ int	ft_print_hexa_process(size_t nb, char *base)
 	return (ft_hex_len(nb));
 }
 
-int	ft_print_hexa(size_t nb, char *base)
+unsigned int	ft_print_hexa(size_t nb, char *base)
 {
 	return (ft_print_hexa_process(nb, base));
 }

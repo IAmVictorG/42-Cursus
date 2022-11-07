@@ -3,47 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:18:08 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/06 13:31:55 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:30:44 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static void my_read(int fd, char *line)
+char	*read_text_to_buffer(int fd)
 {
-	char	*buff;
+	char	*buffer;
 	int		red;
 
-	red = 1;
-	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buff)
-		return ;
-	while (red != 0)
-	{
-		red = (int)read(fd, buff, BUFFER_SIZE);
-		/*if ((!(*stash) && red == 0) || red == -1)
-		{
-			free(buff);
-			return ;
-		}*/
-		buff[red] = '\0';
-		add_to_line(line, red, buff);
-		//free(buff);
-	}
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	red = read(fd, buffer, BUFFER_SIZE);
+	//printf("RED : %d\n", red);
+	//printf("BUFFER : %s\n", buffer);
+	buffer[red] = '\0';
+	return (buffer);
 }
 
-char *get_next_line(int fd)
+char	*add_buffer_to_line(char *line, int fd)
 {
-	char			*line;
+	int			i;
+	int			j;
+	char		*buffer;
+	static char	*remains;
 
-	line = NULL;
+	i = 0;
+	j = 0;
+	buffer = read_text_to_buffer(fd);
+	while (buffer[i] != '\n' && buffer[i] != '\0')
+		i++;
+	if (remains)
+	{
+		line = ft_strjoin(line, remains);
+		free(remains);
+		remains = NULL;
+	}
+	line = ft_strnjoin(line, buffer, i + 1);
+	free(buffer);
+	if (buffer[i] != '\n')
+		return (add_buffer_to_line(line, fd));
+	remains = malloc(BUFFER_SIZE - i);
+	while (buffer[i++])
+		remains[j++] = buffer[i];
+	return (line);
+}
+
+char	*get_next_line(int fd)
+{
+	char	*line;
+
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
-	my_read(fd, line);
-	if (line == NULL)
-		return (NULL);
-	return (line);
+	line = "";
+	printf("Result : %s", add_buffer_to_line(line, fd));
+	return (NULL);
 }

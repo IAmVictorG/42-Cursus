@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:19:30 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/06 13:46:22 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/07 11:11:15 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@
 # include <string.h>
 
 # ifndef BUFFER_SIZE
-#  define  BUFFER_SIZE 6
+#  define  BUFFER_SIZE 4
 # endif
 
 char	*get_next_line(int fd);
-void	add_to_line(char *line, int red, char *buff);
-size_t	ft_strlcat(char *dest, char *src, size_t size);
+char	*add_buffer_to_line(char *line, int fd);
+char	*ft_strnjoin(char const *s1, char const *s2, int n);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

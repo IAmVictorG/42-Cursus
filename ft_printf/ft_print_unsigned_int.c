@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:46:05 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/07 08:13:59 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/07 08:51:13 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int	ft_print_unsigned_int(unsigned int nb)
 		return (1);
 	}
 	size = getnbsizeu(nb);
-
 	processu(nb, size);
 	return (size);
 }

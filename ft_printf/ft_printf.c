@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:09:00 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/04 14:15:55 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:20:00 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	formats(const char format, va_list args)
 	else if (format == 'x')
 		len += ft_print_hexa(va_arg(args, size_t), BASEHEXAMIN);
 	else if (format == 'X')
-		len += ft_print_hexa(va_arg(args, size_t), "0123456789ABCDEF");
+		len += ft_print_hexa(va_arg(args, size_t), BASEHEXAMAJ);
 	else if (format == 'u')
 		len += ft_print_unsigned_int(va_arg(args, unsigned int));
 	else if (format == 'i')

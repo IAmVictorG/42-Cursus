@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorgiordani01 <victorgiordani01@stud    +#+  +:+       +#+        */
+/*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 23:49:55 by apuchill          #+#    #+#             */
-/*   Updated: 2022/11/05 17:09:26 by victorgiord      ###   ########.fr       */
+/*   Updated: 2022/11/07 17:07:58 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,44 +48,44 @@ char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-void	freemalloc(char **result, size_t j)
+void	freemalloc(char **result, int j)
 {
-	while (1 + j--)
+	while (j > -1)
 	{
 		free(result[j]);
+		result[j] = NULL;
+		j--;
 	}
 	free(result);
 }
 
-void	process(char const *s, char **result, char c)
+int	process(char const *s, char **result, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
+	int	i;
+	int	j;
+	int	start;
 
-	j = 0;
-	index = -1;
 	i = 0;
-	while (i <= ft_strlen(s))
+	j = 0;
+	while (s[i])
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (j < count_words(s, c))
 		{
-			result[j] = word_dup(s, index, i);
+			result[j] = word_dup(s, start, i);
 			if (!result[j])
 			{
-				freemalloc(result, j);
-				result[0] = malloc(1);
-				result[0] = NULL;
-				return ;
+				freemalloc(result, j++);
+				return (-1);
 			}
-			j++;
-			index = -1;
 		}
-		i++;
 	}
 	result[j] = NULL;
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -93,8 +93,9 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 
 	result = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !result)
+	if (!result)
 		return (NULL);
-	process(s, result, c);
+	if (process(s, result, c) == -1)
+		return (NULL);
 	return (result);
 }
