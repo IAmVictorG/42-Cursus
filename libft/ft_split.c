@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 23:49:55 by apuchill          #+#    #+#             */
-/*   Updated: 2022/11/08 14:33:10 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:43:58 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*word_dup(const char *str, int start, int finish)
 
 static void	freemalloc(char **result, int j)
 {
-	while (j > -1)
+	while (j >= 0)
 	{
 		free(result[j]);
 		result[j] = NULL;
