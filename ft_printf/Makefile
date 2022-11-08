@@ -6,7 +6,7 @@
 #    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 22:53:58 by victorgiord       #+#    #+#              #
-#    Updated: 2022/11/07 15:02:19 by vgiordan         ###   ########.fr        #
+#    Updated: 2022/11/08 14:55:58 by vgiordan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,9 @@ SRCS = $(addprefix ft_, printf.c putstr.c putnbr.c printchar.c printhexa.c print
 
 OBJS = ${SRCS:.c=.o}
 
-RM = rm
+RM = rm -f
 
 CC = gcc
-
-INCLUDES = includes
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -31,6 +29,9 @@ ${NAME}:	${OBJS}
 			ar -rcs ${NAME} ${OBJS}
 
 all:		${NAME} 
+
+p:	${OBJS}
+	${CC} ${CFLAGS} -o monp ${OBJS}
 
 clean:
 			${RM} ${OBJS}

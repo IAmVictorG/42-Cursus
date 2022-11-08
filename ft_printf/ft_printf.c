@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:09:00 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/07 15:20:00 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:08:47 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int	ft_printf(const char *s, ...)
 	(void) argc;
 	(void) argv;
 	printf("Me : \n");
-	ft_printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 3000);
-	printf("Expected : \n");
-	printf("%s%x%s%%%i %d\n", "Victor", 2000, "Giordani", 075, 3000);
+	ft_printf("x\vyc:_%Xogx9.%d,2\rG\ns%p%x_~Ab%uvXFO0%pi*y_91I]QU%djbqVGi~%X(SxTvUSn", 30444130, 1018442368, (void *)1560310682486473672, -341184353, -397363759, (void *)6455914633601234272, 675790412, 1212509191);
+	printf("\nExpected : \n");
+	printf("x\vyc:_%Xogx9.%d,2\rG\ns%p%x_~Ab%uvXFO0%pi*y_91I]QU%djbqVGi~%X(SxTvUSn", 30444130, 1018442368, (void *)1560310682486473672, -341184353, -397363759, (void *)6455914633601234272, 675790412, 1212509191);
 	return (0);
 }
 */

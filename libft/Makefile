@@ -1,51 +1,29 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/17 11:24:17 by vgiordan          #+#    #+#              #
-#    Updated: 2022/11/07 15:39:08 by vgiordan         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+SRCS 	= ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putchar_fd.c ft_striteri.c ft_strmapi.c ft_isascii.c ft_itoa.c ft_strtrim.c ft_strjoin.c ft_substr.c ft_strdup.c ft_calloc.c ft_strlcpy.c ft_split.c ft_strlcat.c ft_tolower.c ft_strnstr.c ft_strrchr.c ft_strchr.c ft_toupper.c ft_isprint.c ft_isalnum.c ft_isdigit.c ft_isalpha.c ft_memcmp.c ft_memchr.c ft_memmove.c ft_bzero.c ft_memcpy.c ft_strlen.c ft_strncmp.c ft_atoi.c ft_memset.c ft_split.c ft_strdup.c ft_strjoin.c
 
-SRCS = \
-		$(addprefix srcs/str/ft_, split.c strlen.c strchr.c strdup.c striteri.c strjoin.c strlcat.c strlcpy.c strmapi.c strncmp.c strnstr.c strrchr.c strtrim.c substr.c) \
-		$(addprefix srcs/memory/ft_, memset.c memmove.c memcpy.c memcmp.c memchr.c calloc.c bzero.c) \
-		$(addprefix srcs/fd/ft_, putchar_fd.c putendl_fd.c putnbr_fd.c putstr_fd.c) \
-		$(addprefix srcs/alphanum/ft_, atoi.c isalnum.c isalpha.c isascii.c isdigit.c isprint.c itoa.c tolower.c toupper.c)
+OBJS	= ${SRCS:.c=.o}
 
-OBJS = ${SRCS:.c=.o}
+NAME	= libft.a
 
-BONUSSRCS = $(addprefix srcs/bonus/ft_, lstnew.c lstadd_front.c lstclear.c lsdtdelone.c lisiter.c lstlast.c lstmap.c lstsize.c)
+CC		= gcc
 
-BONUSOBJS = ${BONUSSCRS:.c=.o}
+RM		= rm -f
 
-NAME = libft.a
-
-RM = rm
-
-CC = gcc
-
-INCLUDES = includes
-
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-			${CC} ${CFLAGS} -I ${INCLUDES} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar -rcs ${NAME} ${OBJS} 
-
-all:		${NAME} 
+			ar rcs ${NAME} ${OBJS}
+	
+all:		${NAME}
 
 clean:
-		-${RM} ${OBJS}
+			${RM} ${OBJS}
 
-fclean:	clean
-		-${RM} ${NAME}
+fclean:		clean
+			${RM} ${NAME}
 
-re:		fclean all
+re:			fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY:		all clean fclean re

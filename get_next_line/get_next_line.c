@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:18:08 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/07 14:30:44 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:20:31 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	line = "";
-	printf("Result : %s", add_buffer_to_line(line, fd));
+	//printf("Result : %s", add_buffer_to_line(line, fd));
 	return (NULL);
 }
