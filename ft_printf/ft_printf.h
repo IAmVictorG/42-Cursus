@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:05:19 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/08 13:43:40 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:57:37 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int		ft_putstr(char *str);
 int		ft_putnbr(int nbr);
 int		ft_printchar(char c);
 void	ft_reverse(char *tab, int size);
-int		ft_print_hexa(size_t nb, char *base);
-int		ft_print_pointer(size_t pt);
+int		ft_print_hexa(unsigned int nb, char *base);
+int		ft_print_pointer(unsigned long long pt);
 int		ft_print_unsigned_int(unsigned int nb);
 
 #endif

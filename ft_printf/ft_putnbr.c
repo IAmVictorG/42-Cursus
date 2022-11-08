@@ -6,13 +6,13 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:39:05 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/04 14:08:34 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:54:01 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	getnbsize(int nb)
+static int	getnbsize(int nb)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ void	ft_reverse(char *tab, int size)
 	}
 }
 
-void	process(int nb, int size)
+static void	process(int nb, int size)
 {
 	char	*result;
 	int		i;

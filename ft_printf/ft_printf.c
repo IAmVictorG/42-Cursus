@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:09:00 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/08 15:08:47 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:12:33 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int	formats(const char format, va_list args)
 	else if (format == 'd')
 		len += ft_putnbr(va_arg(args, int));
 	else if (format == 'x')
-		len += ft_print_hexa(va_arg(args, size_t), BASEHEXAMIN);
+		len += ft_print_hexa(va_arg(args, unsigned int), BASEHEXAMIN);
 	else if (format == 'X')
-		len += ft_print_hexa(va_arg(args, size_t), BASEHEXAMAJ);
+		len += ft_print_hexa(va_arg(args, unsigned int), BASEHEXAMAJ);
 	else if (format == 'u')
 		len += ft_print_unsigned_int(va_arg(args, unsigned int));
 	else if (format == 'i')
 		len += ft_putnbr(va_arg(args, int));
 	else if (format == 'p')
-		len += ft_print_pointer(va_arg(args, size_t));
+		len += ft_print_pointer(va_arg(args, unsigned long long));
 	else if (format == '%')
 		len += ft_printchar('%');
 	else
@@ -61,12 +61,15 @@ int	ft_printf(const char *s, ...)
 
 /*int	main(int argc, char const *argv[])
 {
+	char	*c;
+
 	(void) argc;
 	(void) argv;
+	c = "ATAT";
 	printf("Me : \n");
-	ft_printf("x\vyc:_%Xogx9.%d,2\rG\ns%p%x_~Ab%uvXFO0%pi*y_91I]QU%djbqVGi~%X(SxTvUSn", 30444130, 1018442368, (void *)1560310682486473672, -341184353, -397363759, (void *)6455914633601234272, 675790412, 1212509191);
+	printf("	%d\n", ft_printf("%p", c));
 	printf("\nExpected : \n");
-	printf("x\vyc:_%Xogx9.%d,2\rG\ns%p%x_~Ab%uvXFO0%pi*y_91I]QU%djbqVGi~%X(SxTvUSn", 30444130, 1018442368, (void *)1560310682486473672, -341184353, -397363759, (void *)6455914633601234272, 675790412, 1212509191);
+	printf("	%d\n", printf("%p", c));
 	return (0);
 }
 */

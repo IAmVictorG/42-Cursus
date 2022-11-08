@@ -6,16 +6,45 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:24:53 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/07 08:51:02 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:02:11 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_pointer(size_t pt)
+static int	ft_ptr_len(unsigned long long nb)
 {
-	ft_putstr("0x");
+	int	len;
+
+	len = 0;
+	while (nb > 0)
+	{
+		len++;
+		nb = nb / 16;
+	}
+	return (len);
+}
+
+static int	ft_print_ptr_process(unsigned long long nb, char *base)
+{
+	if (nb > 0)
+	{
+		ft_print_ptr_process(nb / 16, base);
+		ft_printchar(base[nb % 16]);
+	}
+	return (ft_ptr_len(nb));
+}
+
+int	ft_print_ptr(unsigned long long nb, char *base)
+{
+	if (nb == 0)
+		return (ft_printchar('0'));
+	return (ft_print_ptr_process(nb, base));
+}
+
+int	ft_print_pointer(unsigned long long pt)
+{
 	if (pt == 0)
-		return (ft_printchar('0') + 2);
-	return (ft_print_hexa(pt, BASEHEXAMIN) + 2);
+		return (ft_putstr("0x") + ft_printchar('0'));
+	return (ft_putstr("0x") + ft_print_ptr(pt, BASEHEXAMIN));
 }
