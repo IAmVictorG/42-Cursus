@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:18:08 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/08 12:20:31 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:50:02 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*read_text_to_buffer(int fd)
 	if (!buffer)
 		return (NULL);
 	red = read(fd, buffer, BUFFER_SIZE);
-	//printf("RED : %d\n", red);
-	//printf("BUFFER : %s\n", buffer);
+	//printf("\nRED : %d\n", red);
+	//printf("BUFFER : %s\n\n", buffer);
 	buffer[red] = '\0';
 	return (buffer);
 }
@@ -37,6 +37,8 @@ char	*add_buffer_to_line(char *line, int fd)
 	i = 0;
 	j = 0;
 	buffer = read_text_to_buffer(fd);
+	if (buffer == NULL)
+		return (NULL);
 	while (buffer[i] != '\n' && buffer[i] != '\0')
 		i++;
 	if (remains)
@@ -47,7 +49,7 @@ char	*add_buffer_to_line(char *line, int fd)
 	}
 	line = ft_strnjoin(line, buffer, i + 1);
 	free(buffer);
-	if (buffer[i] != '\n')
+	if (buffer[i] != '\n' && !buffer[i + 1])
 		return (add_buffer_to_line(line, fd));
 	remains = malloc(BUFFER_SIZE - i);
 	while (buffer[i++])
@@ -59,9 +61,11 @@ char	*get_next_line(int fd)
 {
 	char	*line;
 
-	if (fd < 0 || BUFFER_SIZE < 1)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = "";
-	//printf("Result : %s", add_buffer_to_line(line, fd));
-	return (NULL);
+	line = add_buffer_to_line(line, fd);
+	if (line == NULL)
+		return (NULL);
+	return (line);
 }
