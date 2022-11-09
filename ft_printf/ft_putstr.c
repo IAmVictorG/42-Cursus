@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:33:22 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/08 18:05:11 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:30:08 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int	ft_putstr(char *str)
 		return (6);
 	}
 	while (str[i])
-		ft_printchar(str[i++]);
+	{
+		if (ft_printchar(str[i++]) == -1)
+			return (-1);
+	}
 	return (i);
 }

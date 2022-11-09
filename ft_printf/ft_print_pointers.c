@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:24:53 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/08 18:02:11 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:30:06 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static int	ft_print_ptr_process(unsigned long long nb, char *base)
 	if (nb > 0)
 	{
 		ft_print_ptr_process(nb / 16, base);
-		ft_printchar(base[nb % 16]);
+		if (ft_printchar(base[nb % 16]) == -1)
+			return (-1);
 	}
 	return (ft_ptr_len(nb));
 }

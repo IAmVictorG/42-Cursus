@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 22:39:05 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/08 16:54:01 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:30:07 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ int	ft_putnbr(int nb)
 		size++;
 	if (nb == -2147483648)
 	{
-		ft_putstr("-2147483648");
+		if (ft_putstr("-2147483648") == -1)
+			return (-1);
 		return (11);
 	}
 	else
