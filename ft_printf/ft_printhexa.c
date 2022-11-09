@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 09:46:08 by vgiordan          #+#    #+#             */
-/*   Updated: 2022/11/09 10:30:04 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/09 11:52:03 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_print_hexa_process(unsigned int nb, char *base)
 	{
 		ft_print_hexa_process(nb / 16, base);
 		if (ft_printchar(base[nb % 16]) == -1)
-			return (-1);
+			exit(-1);
 	}
 	return (ft_hex_len(nb));
 }
