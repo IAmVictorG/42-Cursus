@@ -6,7 +6,7 @@
 /*   By: vgiordan <vgiordan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 13:18:08 by victorgiord       #+#    #+#             */
-/*   Updated: 2022/11/09 14:50:02 by vgiordan         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:42:10 by vgiordan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*read_text_to_buffer(int fd)
 	if (!buffer)
 		return (NULL);
 	red = read(fd, buffer, BUFFER_SIZE);
-	//printf("\nRED : %d\n", red);
-	//printf("BUFFER : %s\n\n", buffer);
 	buffer[red] = '\0';
 	return (buffer);
 }
@@ -37,7 +35,7 @@ char	*add_buffer_to_line(char *line, int fd)
 	i = 0;
 	j = 0;
 	buffer = read_text_to_buffer(fd);
-	if (buffer == NULL)
+	if (buffer == NULL || read(fd, &line, 0) < 0)
 		return (NULL);
 	while (buffer[i] != '\n' && buffer[i] != '\0')
 		i++;
@@ -49,7 +47,7 @@ char	*add_buffer_to_line(char *line, int fd)
 	}
 	line = ft_strnjoin(line, buffer, i + 1);
 	free(buffer);
-	if (buffer[i] != '\n' && !buffer[i + 1])
+	if (buffer[i] != '\n')
 		return (add_buffer_to_line(line, fd));
 	remains = malloc(BUFFER_SIZE - i);
 	while (buffer[i++])
@@ -61,11 +59,13 @@ char	*get_next_line(int fd)
 {
 	char	*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	line = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &line, 0) < 0)
 		return (NULL);
-	line = "";
 	line = add_buffer_to_line(line, fd);
 	if (line == NULL)
+		return (NULL);
+	if (line[0] == '\0')
 		return (NULL);
 	return (line);
 }
